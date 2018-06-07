@@ -33,3 +33,10 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    admin.workspace:
+        class: AppBundle\Admin\WorkspaceAdmin
+#        arguments: [~, AppBundle\Entity\Workspace, ~]
+        arguments: [~, AppBundle\Entity\Workspace, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Workspace }

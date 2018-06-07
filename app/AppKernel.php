@@ -19,7 +19,12 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            new \FOS\UserBundle\FOSUserBundle()
+            new \FOS\UserBundle\FOSUserBundle(),
+            new \Sonata\CoreBundle\SonataCoreBundle(),
+            new \Sonata\BlockBundle\SonataBlockBundle(),
+            new \Sonata\AdminBundle\SonataAdminBundle(),
+            new \Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new \Knp\Bundle\MenuBundle\KnpMenuBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -30,6 +35,7 @@ class AppKernel extends Kernel
             if ('dev' === $this->getEnvironment()) {
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
                 $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
+                $bundles[] = new \Hautelook\AliceBundle\HautelookAliceBundle();
             }
         }
 
